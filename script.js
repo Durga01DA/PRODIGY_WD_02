@@ -7,9 +7,8 @@ class Stopwatch {
         this.laps = [];
         this.isCountdown = false;
         this.targetTime = 0;
-        this.warningThreshold = 10000; // 10 seconds in milliseconds
+        this.warningThreshold = 10000; 
         
-        // DOM Elements
         this.display = document.querySelector('.display');
         this.startBtn = document.getElementById('startBtn');
         this.pauseBtn = document.getElementById('pauseBtn');
@@ -23,7 +22,6 @@ class Stopwatch {
         this.millisecondsInput = document.getElementById('millisecondsInput');
         this.setTimeBtn = document.getElementById('setTimeBtn');
         
-        // Event Listeners
         this.startBtn.addEventListener('click', () => this.start());
         this.pauseBtn.addEventListener('click', () => this.pause());
         this.resetBtn.addEventListener('click', () => this.reset());
@@ -31,7 +29,6 @@ class Stopwatch {
         this.modeToggle.addEventListener('click', () => this.toggleMode());
         this.setTimeBtn.addEventListener('click', () => this.setCountdownTime());
         
-        // Initialize display
         this.updateDisplay();
     }
     
@@ -104,7 +101,6 @@ class Stopwatch {
         const elapsed = currentTime - this.startTime;
         this.elapsedTime = Math.max(0, this.targetTime - elapsed);
         
-        // Add warning class when time is below threshold
         if (this.elapsedTime <= this.warningThreshold && this.elapsedTime > 0) {
             this.display.classList.add('warning');
         } else {
@@ -136,5 +132,4 @@ class Stopwatch {
     }
 }
 
-// Initialize the stopwatch
 const stopwatch = new Stopwatch(); 
