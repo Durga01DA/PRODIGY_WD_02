@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stopwatch</h1>
+        <div class="mode-toggle">
+            <button id="modeToggle">Switch to Countdown</button>
+        </div>
+        <div class="stopwatch">
+            <div class="display">00:00:00.000</div>
+            <div class="countdown-input" style="display: none;">
+                <div class="input-group">
+                    <input type="number" id="minutesInput" min="0" max="59" placeholder="MM">
+                    <span>:</span>
+                    <input type="number" id="secondsInput" min="0" max="59" placeholder="SS">
+                    <span>:</span>
+                    <input type="number" id="millisecondsInput" min="0" max="99" placeholder="MS">
+                </div>
+                <button id="setTimeBtn">Set Time</button>
+            </div>
+            <div class="controls">
+                <button id="startBtn">Start</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="resetBtn">Reset</button>
+                <button id="lapBtn">Lap</button>
+            </div>
+            <div class="laps">
+                <h2>Lap Times</h2>
+                <ul id="lapList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
